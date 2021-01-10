@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>To-Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- note that we do not need to put public/css/styles.css! -->
+</head>
+
+<body>
+  <div class="everything">
+    <div class="title">
+      <h1> <%= listTitle%> </h1>
+    </div>
+    <% for (let i = 0; i < newListItems.length; i++) { %>
+    <div class="new-task">
+      <input type="checkbox">
+      <p class="text-format"><%= newListItems[i] %></p>
+    </div>
+    <% } %>
+    <div class="add-task-bar">
+      <form class="" action="/" method="post">
+        <input type="text" class="text-input" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
