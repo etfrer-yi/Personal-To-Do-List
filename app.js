@@ -70,7 +70,11 @@ app.post("/deleteAll", function(req, res){
   })
 })
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
-app.listen(process.env.PORT || 3000, function() { // Allows Heroku to choose a port 
-  console.log("Server started on port 3000");
+app.listen(port, function() { // Allows Heroku to choose a port
+  console.log("Server started successfully");
 })
