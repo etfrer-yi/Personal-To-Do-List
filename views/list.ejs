@@ -10,20 +10,30 @@
 </head>
 
 <body>
-  <div class="everything">
+  <div>
     <div class="title">
       <h1> <%= listTitle%> </h1>
     </div>
-    <% for (let i = 0; i < newListItems.length; i++) { %>
-    <div class="new-task">
-      <input type="checkbox">
-      <p class="text-format"><%= newListItems[i] %></p>
-    </div>
-    <% } %>
+    <h3 class="quote-annoucement"> Stoic quote of the day: </h3>
+    <h3 class="quote"><%= randomStoicQuote%></h3>
+    <h3 class="author"><%= stoicAuthor %></h3>
+    <% newListItems.forEach(function(item) { %>
+      <form class="" action="/delete" method="post">
+        <div class="new-task">
+          <input type="checkbox" name="checkbox" value="<%= item._id%>" onChange="this.form.submit()">
+          <p class="text-format"><%= item.name %></p>
+        </div>
+      </form>
+    <% }) %>
     <div class="add-task-bar">
       <form class="" action="/" method="post">
         <input type="text" class="text-input" name="newItem" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        <button type="submit" name="list">+</button>
+      </form>
+    </div>
+    <div class="">
+      <form class="" action="/deleteAll" method="post">
+        <button class="clear-tasks" type="submit" name="clear-all">Clear All</button>
       </form>
     </div>
   </div>
