@@ -8,24 +8,14 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
 }
 
-p, ::placeholder, input[type="text"], button.clear-tasks {
+p, input[type="text"], button.clear-tasks {
   font-family: 'Acme', sans-serif;
   font-size: 1.5rem;
 }
 
-h3.quote {
-  text-align: left;
-  margin-top: 0;
-}
-
-h3.author {
-  text-align: right;
-  margin-bottom: 20px;
-}
-
-h3.quote-annoucement {
-  margin-bottom: 0;
-  margin-top: 20px;
+p {
+  margin: auto auto auto 0;
+  line-height: 1;
 }
 
 h3 {
@@ -42,54 +32,11 @@ div {
   margin: 0 auto;
 }
 
-.new-task {
-  background-color: rgba(255,255,255,0.3);
-}
-
-.title {
-  height: 200px;
-  margin-bottom: 0px;
-  height: 50px;;
-}
-
-p {
-  display: inline-block;
-  text-align: left;
-  margin: auto auto auto 0;
-  line-height: 1;
-}
-
-input[type="checkbox"] {
-  margin: auto 40px auto 10px;
-}
-
-input[type="checkbox"]:checked+p {
-  text-decoration: line-through;
-  text-decoration-color: #c1a1d3;
-}
-
-
-.add-task-bar, .new-task {
-  display: flex;
-  /* justifies the CONTENT of the divs  */
-  justify-content: flex-start;
-}
-
-/* Styling the text submitssion box and the button  */
-.text-input {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 143%;
-  height: 100%;
-}
-
 div.add-task-bar {
   position: relative;
   margin-top: 20px;
   margin-bottom: 40px;
 }
-
 
 button[name="list"] {
   height: 30px;
@@ -112,13 +59,54 @@ button.clear-tasks {
   margin-bottom: 60px;
 }
 
-.clear-tasks: hover {
-  background-color: rgba(255,255,255,0.6);
-}
-
-
 input[type="text"] {
    background-color: rgba(255,255,255,0.3);
    border-width: 3px;
    border-color: #c1a1d3;
+}
+
+input[type="checkbox"] {
+  margin: auto 40px auto 10px;
+}
+
+input[type="checkbox"]:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: #c1a1d3;
+}
+
+.new-task {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.title {
+  margin-bottom: 0px;
+  height: 50px;
+}
+
+.add-task-bar, .new-task {
+  display: flex;
+}
+
+/* Styling the text submitssion box and the button  */
+.text-input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 350px;
+  height: 100%;
+}
+
+.quote {
+  text-align: left;
+  margin-top: 0;
+}
+
+.author {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.quote-annoucement {
+  margin-bottom: 0;
+  margin-top: 20px;
 }

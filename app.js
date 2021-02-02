@@ -5,13 +5,15 @@ const stoic = require(__dirname + "/stoic-quotes.js");
 const mongoose = require("mongoose");
 
 const app = express();
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // assumes a views directory containing a .ejs file exists
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public")); // without this,
 // AND without placing our CSS file within the publci folder, the server cannot serve up the link
 // To serve static files such as images, CSS files, and JS files, use express.static
 
+// my MongoDB Atlas account
 mongoose.connect("mongodb+srv://rerfte:rerfte@9229656278@cluster0.nljcf.mongodb.net/mychorelistDB?retryWrites=true&w=majority/mychorelistDB", {useNewUrlParser:true, useUnifiedTopology: true});
+
 
 const choreSchema = new mongoose.Schema({name: String}, {
         writeConcern: {
@@ -52,7 +54,7 @@ app.post("/", function(req, res) {
 
 app.post("/delete", function(req, res){
   const checkedItemID = req.body.checkbox;
-  console.log(checkedItemID);
+  //console.log(checkedItemID);
   Chore.deleteOne({_id: checkedItemID}, function(err){
     if (!err) {
       res.redirect("/");
@@ -70,11 +72,11 @@ app.post("/deleteAll", function(req, res){
   })
 })
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
+// let port = process.env.PORT;
+// if (port == null || port == "") {
+//   port = 3000;
+// }
 
-app.listen(port, function() { // Allows Heroku to choose a port
+app.listen(3000, function() { // Allows Heroku to choose a port
   console.log("Server started successfully");
 })
