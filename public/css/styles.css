@@ -28,7 +28,8 @@ h1 {
 }
 
 div {
-  height: 50px;
+  min-height: 50px;
+  height: auto;
   width: 350px;
   margin: 0 auto;
 }
