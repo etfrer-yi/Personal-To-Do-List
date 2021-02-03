@@ -77,6 +77,6 @@ if (port == null || port == "") {
   port = 3000;
 }
 
-app.listen(3000, function() { // Allows Heroku to choose a port
+app.listen(port, function() { // Allows Heroku to choose a port
   console.log("Server started successfully");
 })
